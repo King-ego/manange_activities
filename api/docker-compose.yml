@@ -1,0 +1,25 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "10222:5432"
+    environment:
+      POSTGRES_USER: diego
+      POSTGRES_PASSWORD: YXCJp3U6BKHFnQA4uE7bh8
+      POSTGRES_DB: admin
+  project:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://activity:YXCJp3U6BKHFnQA4uE7bh8@postgres:10222/activityDB
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules

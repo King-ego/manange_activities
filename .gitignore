@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/.idea
+**/.vscode
+**/build
+**/coverage
+**/temp
+**/temp-*
+**/temp_*
+**/package-lock.json
+**/yarn.lock
+**/.env
