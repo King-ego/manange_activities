@@ -4,6 +4,8 @@ import cors from "cors";
 import AppDataSource from "@shared/AppDataSource";
 import routers from "@shared/routes";
 
+import "@shared/container";
+
 const app = express();
 
 AppDataSource.initialize().then(() => {

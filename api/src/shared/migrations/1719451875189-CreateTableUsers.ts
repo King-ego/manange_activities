@@ -4,6 +4,7 @@ export class CreateTableUsers1719451875189 implements MigrationInterface {
     name = 'CreateTableUsers1719451875189'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
         await queryRunner.createTable(new Table({
             name: "users",
             columns: [
@@ -44,6 +45,7 @@ export class CreateTableUsers1719451875189 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("users");
+        await queryRunner.query('DROP EXTENSION IF EXISTS "uuid-ossp"');
     }
 
 }
