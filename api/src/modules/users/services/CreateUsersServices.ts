@@ -1,5 +1,5 @@
 import {inject, injectable} from "tsyringe";
-import IUsersRepository from "@modules/users/interfaces/respositories/users/IUsersRepository";
+import IUsersRepository from "@modules/users/interfaces/respositories/IUsersRepository";
 import Users from "@modules/users/entities/Users";
 
 interface IRequest {

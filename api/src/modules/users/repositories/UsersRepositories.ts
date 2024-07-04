@@ -1,9 +1,9 @@
 import { Repository } from "typeorm";
 
-import IUsersRepository from "@modules/users/interfaces/respositories/users/IUsersRepository";
+import IUsersRepository from "@modules/users/interfaces/respositories/IUsersRepository";
 import Users from "@modules/users/entities/Users";
 import AppDataSource from "@shared/AppDataSource";
-import CreateUserDTO from "@modules/users/interfaces/dto/users/CreateUserDTO";
+import CreateUserDTO from "@modules/users/interfaces/dto/CreateUserDTO";
 
 class UsersRepositories implements IUsersRepository {
     private ormRepository: Repository<Users>;
