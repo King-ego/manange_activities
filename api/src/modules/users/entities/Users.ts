@@ -1,4 +1,5 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, OneToMany} from "typeorm";
+import WeekDay from "@modules/activities/entities/WeekDay";
 
 @Entity("users")
 class Users {
@@ -13,6 +14,9 @@ class Users {
 
     @Column()
     password: string;
+
+    @OneToMany(() => WeekDay, weekDay => weekDay.user)
+    weekDay: WeekDay[];
 
     @CreateDateColumn()
     created_at: Date;
